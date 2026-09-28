@@ -20,8 +20,8 @@ window.SITE_DATA = {
     zh: {
       langButton: 'EN',                       // 按钮上显示「点击后切换到的语言」
       htmlLang: 'zh-CN',
-      pageTitle: 'blkl114 · 个人网站',
-      resumeTitle: '简历 · blkl114',
+      pageTitle: '刘子凡 · 个人网站',
+      resumeTitle: '简历 · 刘子凡',
       skip: '跳到主要内容',
       nav: [
         { id: 'about',     label: '关于我' },
@@ -47,7 +47,7 @@ window.SITE_DATA = {
         contact:   { eyebrow: 'Contact',   title: '联系我',   desc: '任何想法、建议或合作邀约，都欢迎找我聊聊。' }
       },
       labels: {
-        location: '所在地', languages: '语言', status: '目前',
+        location: '所在地', languages: '语言', status: '目前', research: '研究方向',
         factsTitle: '基本信息', contactTitle: '顺便说说',
         viewSource: '查看源码', readMore: '阅读全文', visit: '访问',
         resume: '查看简历', backHome: '回到首页', top: '回到顶部', source: '源码',
@@ -58,8 +58,8 @@ window.SITE_DATA = {
     en: {
       langButton: '中',
       htmlLang: 'en',
-      pageTitle: 'blkl114 · Personal Website',
-      resumeTitle: 'Resume · blkl114',
+      pageTitle: 'Liu Zifan · Personal Website',
+      resumeTitle: 'Resume · Liu Zifan',
       skip: 'Skip to content',
       nav: [
         { id: 'about',     label: 'About' },
@@ -85,7 +85,7 @@ window.SITE_DATA = {
         contact:   { eyebrow: 'Contact',   title: 'Get in touch', desc: 'Ideas, feedback or collaboration — always welcome.' }
       },
       labels: {
-        location: 'Location', languages: 'Languages', status: 'Status',
+        location: 'Location', languages: 'Languages', status: 'Status', research: 'Research',
         factsTitle: 'Basic info', contactTitle: 'Also here',
         viewSource: 'View source', readMore: 'Read more', visit: 'Visit',
         resume: 'View resume', backHome: 'Back home', top: 'Back to top', source: 'Source',
@@ -97,71 +97,84 @@ window.SITE_DATA = {
 
   /* =============== 3. 个人信息（★ 主要修改区） =============== */
   profile: {
-    /* 页面左上角 logo 与浏览器标题里的名字  TODO: 换成你的真实姓名或昵称 */
-    name: { zh: 'blkl114', en: 'blkl114' },
-    initial: 'b',                              // logo 方块里显示的字母
+    /* 页面左上角 logo 与浏览器标题里的名字 */
+    name: { zh: '刘子凡', en: 'Liu Zifan' },
+    initial: '刘',                             // logo 方块里显示的字
 
     /* 一句话身份说明 */
-    headline: { zh: '开发者 · 终身学习者', en: 'Developer · Lifelong Learner' },
+    headline: {
+      zh: '北京大学 · 电子信息科学类实验班',
+      en: 'Peking University · Electronic Information Science (Experimental Class)'
+    },
 
     /* Hero 首屏的自我介绍 */
     intro: {
-      zh: '一名热爱动手实践的开发者 —— 喜欢把想法变成能跑起来的代码，从脚本工具到网页应用，持续折腾、持续记录。',
-      en: 'A hands-on developer who loves turning ideas into working code — from small scripts to web apps, always building, always learning.'
+      zh: '物理学爱好者，目前正在研究光子晶体 CWT 理论与数值计算。',
+      en: 'Physics enthusiast, currently working on CWT theory and numerical computation for photonic crystals.'
     },
 
-    /* 关于我：可以写多段，用数组  TODO: 换成你的真实介绍 */
+    /* 关于我：可以写多段，用数组 */
     bio: {
       zh: [
-        '我是 blkl114，目前主要做网页前端与 Python 工具开发。我喜欢把重复的工作交给脚本，把有意思的想法做成小项目。',
-        '课余时间会折腾一些工程计算与数据可视化，也会把踩过的坑记成笔记。如果你对下面的项目感兴趣，或者想一起做点什么，欢迎随时联系我。'
+        '我是刘子凡，北京大学电子信息科学类实验班在读本科生，主要兴趣在物理学，喜欢把理论推导和数值计算放在一起琢磨。',
+        '目前正在研究光子晶体 CWT 理论与数值计算：一边读文献梳理理论框架，一边用 MATLAB / Python 做数值模拟与可视化，希望把公式变成能跑、能看的图。',
+        '这个网站用来记录我的学习与研究进展。如果你想交流物理、数值方法，或者只是想认识一下，都欢迎随时联系我。'
       ],
       en: [
-        'I am blkl114. I mainly work on front-end pages and Python tooling — automating repetitive work and turning ideas into small projects.',
-        'In my spare time I explore engineering computation and data visualisation, and I write down the problems I run into. Feel free to reach out if anything below interests you.'
+        'I am Liu Zifan, an undergraduate in the Electronic Information Science experimental class at Peking University. Physics is my main interest, and I like working through theory and numerics hand in hand.',
+        'I am currently studying CWT theory and numerical computation for photonic crystals: reading papers to understand the framework, and using MATLAB / Python for simulation and visualisation.',
+        'This site keeps a record of my study and research. Feel free to get in touch if you would like to talk about physics, numerical methods, or anything else.'
       ]
     },
 
     /* 基本信息卡（labelKey 对应 ui.labels 里的文字） */
     facts: [
-      { labelKey: 'location',  value: { zh: '中国', en: 'China' } },
-      { labelKey: 'languages', value: { zh: '中文 · English', en: 'Chinese · English' } },
-      { labelKey: 'status',    value: { zh: '开放合作与交流', en: 'Open to collaboration' } }
+      { labelKey: 'location',  value: { zh: '中国 · 北京', en: 'Beijing, China' } },
+      { labelKey: 'research',  value: { zh: '光子晶体 CWT 理论与数值计算', en: 'CWT theory & numerics for photonic crystals' } },
+      { labelKey: 'status',    value: { zh: '本科在读（2025 级）', en: 'Undergraduate, class of 2025' } },
+      { labelKey: 'languages', value: { zh: '中文 · English', en: 'Chinese · English' } }
     ],
 
     /* 联系方式：icon 支持 github / email / wechat / phone / site / bilibili / x / linkedin
-       不需要的条目整行删掉即可；下面 GitHub 之外的例子已注释，填好后取消注释就会显示 */
+       不需要的条目整行删掉即可；例子（微信、电话）已注释，需要时取消注释并填入 */
     contacts: [
-      { icon: 'github', label: { zh: 'GitHub', en: 'GitHub' }, value: '@blkl114', href: 'https://github.com/blkl114' }
-      /* TODO: 取消注释并改成你的真实账号
-      ,{ icon: 'email',  label: { zh: '邮箱', en: 'Email' },   value: 'your@example.com',  href: 'mailto:your@example.com' }
-      ,{ icon: 'wechat', label: { zh: '微信', en: 'WeChat' },  value: 'your-wechat-id',    href: '' }
-      ,{ icon: 'phone',  label: { zh: '电话', en: 'Phone' },   value: '+86 138-0000-0000', href: 'tel:+8613800000000' }
-      ,{ icon: 'site',   label: { zh: '个人网站', en: 'Website' }, value: 'blkl114.github.io', href: 'https://blkl114.github.io' }
+      { icon: 'github', label: { zh: 'GitHub', en: 'GitHub' }, value: '@blkl114', href: 'https://github.com/blkl114' },
+      { icon: 'email',  label: { zh: '邮箱（校内）', en: 'Email (PKU)' },
+        value: '2500012820@stu.pku.edu.cn', href: 'mailto:2500012820@stu.pku.edu.cn' },
+      { icon: 'email',  label: { zh: '邮箱（Gmail）', en: 'Email (Gmail)' },
+        value: 'lzfblkl@gmail.com', href: 'mailto:lzfblkl@gmail.com' },
+      { icon: 'email',  label: { zh: '邮箱（QQ）', en: 'Email (QQ)' },
+        value: '3908357857@qq.com', href: 'mailto:3908357857@qq.com' }
+      /* 需要显示微信 / 电话时，照着上面的格式加一行即可
+      ,{ icon: 'wechat', label: { zh: '微信', en: 'WeChat' }, value: 'your-wechat-id',   href: '' }
+      ,{ icon: 'phone',  label: { zh: '电话', en: 'Phone' },  value: '+86 138-0000-0000', href: 'tel:+8613800000000' }
       */
     ],
 
-    /* 教育经历（建议按时间倒序） TODO: 换成你的真实学校、专业与时间 */
+    /* 教育经历（按时间倒序） */
     education: [
       {
-        period: '2021.09 – 2025.06',
-        school: { zh: '某某大学', en: 'Your University' },
-        degree: { zh: '工学学士', en: 'B.Eng.' },
-        field:  { zh: '计算机科学与技术', en: 'Computer Science' },
-        desc: {
-          zh: '主修数据结构、计算机网络、数据库与操作系统；参与校园网站的开发与维护，并自学了前端工程化相关的内容。',
-          en: 'Core courses: data structures, computer networks, databases and operating systems. Worked on the campus website and taught myself front-end engineering.'
+        period: '2025.09 – 至今',
+        school: { zh: '北京大学', en: 'Peking University' },
+        degree: { zh: '本科在读', en: 'Undergraduate' },
+        field: {
+          zh: '信息科学技术学院 · 电子信息科学类实验班',
+          en: 'School of Electronics Engineering and Computer Science · Electronic Information Science (Experimental Class)'
         },
-        tags: { zh: ['GPA 3.7 / 4.0', '校级奖学金', 'ACM 集训队'], en: ['GPA 3.7 / 4.0', 'Scholarship', 'ACM Club'] }
+        desc: {
+          zh: '现就读于信息科学技术学院电子信息科学类实验班，主要兴趣方向为物理学，正在开展光子晶体 CWT 理论与数值计算相关的学习与研究。',
+          en: 'Studying in the Electronic Information Science experimental class at the School of EECS. Physics is my main interest — I am currently working on CWT theory and numerical computation for photonic crystals.'
+        },
+        tags: { zh: ['物理', '数值计算', 'MATLAB', 'Python'], en: ['Physics', 'Numerics', 'MATLAB', 'Python'] }
       },
       {
-        period: '2018.09 – 2021.06',
-        school: { zh: '某某中学', en: 'Your High School' },
+        period: '2022.09 – 2025.06',
+        school: { zh: '长郡中学', en: 'Changjun High School' },
         degree: { zh: '高中 · 理科', en: 'High School · Science' },
-        field:  { zh: '', en: '' },
+        field: { zh: '', en: '' },
         desc: {
-          zh: '在这里第一次接触编程，并开始自学网页开发与 Python。',
-          en: 'Where I first met programming, and started learning web development and Python on my own.'
+          zh: '高中理科方向，在这里打下了物理与数学的基础。',
+          en: 'Science track, where I built the foundations of physics and mathematics.'
         },
         tags: { zh: [], en: [] }
       }
@@ -224,7 +237,8 @@ window.SITE_DATA = {
       tags: { zh: ['HTML', 'CSS', 'JavaScript'], en: ['HTML', 'CSS', 'JavaScript'] },
       link: 'https://github.com/blkl114/blkl114.github.io'
     },
-    /* TODO: 下面两个是示例项目，替换成你自己的作品，不需要就整段删掉 */
+    /* 下面两个示例项目已按需隐藏；想恢复就把这段注释去掉 */
+    /*
     {
       badge: 'Tool',
       year: '2025',
@@ -247,6 +261,7 @@ window.SITE_DATA = {
       tags: { zh: ['JavaScript', '可视化'], en: ['JavaScript', 'Visualisation'] },
       link: 'https://github.com/blkl114'
     }
+    */
   ],
 
   /* =============== 6. 作品集 / 图集 ===============
