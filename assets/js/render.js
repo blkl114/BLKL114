@@ -184,6 +184,12 @@ window.SiteRender = (function () {
         (sub ? '<p class="timeline-sub">' + esc(sub) + '</p>' : '') +
         (desc ? '<p class="timeline-desc">' + esc(desc) + '</p>' : '') +
         tags(entry.tags, lang) +
+        ((entry.links && entry.links.length)
+          ? '<div class="timeline-links">' + entry.links.map(function (link) {
+              return '<a href="' + esc(link.href) + '"' + linkAttrs(link.href) + '>' +
+                esc(pick(link.label, lang)) + ' →</a>';
+            }).join('') + '</div>'
+          : '') +
       '</div>' +
     '</li>';
   }

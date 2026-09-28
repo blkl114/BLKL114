@@ -170,7 +170,12 @@ window.SITE_DATA = {
           zh: '现就读于信息科学技术学院电子信息科学类实验班，主要兴趣方向为物理学，正在开展光子晶体 CWT 理论与数值计算相关的学习与研究。',
           en: 'Studying in the Electronic Information Science experimental class at the School of EECS. Physics is my main interest — I am currently working on CWT theory and numerical computation for photonic crystals.'
         },
-        tags: { zh: ['物理', '数值计算', 'MATLAB', 'Python'], en: ['Physics', 'Numerics', 'MATLAB', 'Python'] }
+        tags: { zh: ['物理', '数值计算', 'MATLAB', 'Python'], en: ['Physics', 'Numerics', 'MATLAB', 'Python'] },
+        /* 学校 / 学院官网链接，会显示在时间线卡片底部 */
+        links: [
+          { label: { zh: '北京大学官网', en: 'Peking University' }, href: 'https://www.pku.edu.cn/' },
+          { label: { zh: '信息科学技术学院', en: 'School of EECS' }, href: 'https://eecs.pku.edu.cn/' }
+        ]
       },
       {
         period: '2022.09 – 2025.06',
@@ -181,7 +186,10 @@ window.SITE_DATA = {
           zh: '高中理科方向，在这里打下了物理与数学的基础。',
           en: 'Science track, where I built the foundations of physics and mathematics.'
         },
-        tags: { zh: [], en: [] }
+        tags: { zh: [], en: [] },
+        links: [
+          { label: { zh: '长郡中学官网', en: 'Changjun High School' }, href: 'http://www.changjun.com.cn/' }
+        ]
       }
     ],
 
