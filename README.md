@@ -9,7 +9,7 @@
 
 目前正在研究光子晶体 CWT 理论与数值计算：一边读文献梳理理论框架，一边用 MATLAB / Python 做数值模拟与可视化，希望把公式变成能跑、能看的图。
 
-本仓库也是我主页 <https://blkl114.github.io> 的源码，用来记录学习与研究进展。
+个人主页：<https://blkl114.github.io>
 
 ## 教育经历
 
@@ -51,15 +51,6 @@
 - 邮箱（QQ）：3908357857@qq.com
 
 更多信息见我的主页 <https://blkl114.github.io>（含 [在线简历](https://blkl114.github.io/resume.html)，支持中英文切换）。
-
-## 关于本仓库
-
-本仓库是上述主页的源码，使用纯 HTML / CSS / JavaScript 编写，由 GitHub Pages 部署。
-页面上的所有文字内容都集中存放在 `assets/js/data.js` 一个文件里（中英双语），改内容只需修改这一个文件。
-
-```powershell
-python -m http.server 8000     # 本地预览：http://localhost:8000
-```
 
 ---
 
