@@ -928,6 +928,8 @@ a:hover { text-decoration: underline; }
 .resume-competitions { display: grid; gap: 1rem; }
 .resume-competitions li p { margin: .2rem 0 0; color: var(--text-muted); font-size: .92rem; }
 
+.award-badges { display: inline-flex; flex-wrap: wrap; gap: .35rem; }
+
 .resume-awards { display: grid; gap: .4rem; }
 .resume-awards li {
   display: flex;

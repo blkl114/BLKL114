@@ -312,7 +312,10 @@ window.SiteRender = (function () {
     fill('awards-cards', items.map(function (award) {
       return '<article class="card reveal">' +
         '<div class="project-top">' +
-          (award.level ? '<span class="project-badge">' + esc(pick(award.level, lang)) + '</span>' : '<span></span>') +
+          '<span class="award-badges">' +
+            (award.stage ? '<span class="project-badge">' + esc(pick(award.stage, lang)) + '</span>' : '') +
+            (award.level ? '<span class="project-badge">' + esc(pick(award.level, lang)) + '</span>' : '') +
+          '</span>' +
           (award.year ? '<span class="project-year">' + esc(award.year) + '</span>' : '') +
         '</div>' +
         '<h3>' + esc(pick(award.title, lang)) + '</h3>' +
@@ -433,9 +436,9 @@ window.SiteRender = (function () {
       ? '<section class="resume-block">' +
           '<h2 class="resume-h2">' + esc((sections.awards || {}).title || '') + '</h2>' +
           '<ul class="resume-awards">' + DATA.awards.map(function (award) {
-            var level = pick(award.level, lang);
+            var stage = pick(award.stage, lang);
             return '<li><span class="resume-year">' + esc(award.year || '') + '</span>' +
-              '<span>' + esc(pick(award.title, lang)) + (level ? ' · ' + esc(level) : '') + '</span></li>';
+              '<span>' + esc(pick(award.title, lang)) + (stage ? ' · ' + esc(stage) : '') + '</span></li>';
           }).join('') + '</ul>' +
         '</section>'
       : '';

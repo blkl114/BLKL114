@@ -239,47 +239,76 @@ window.SITE_DATA = {
   ],
 
   /* =============== 5. 奖项荣誉 ===============
-     · 四项字段都可能写成 { zh: '...', en: '...' } 的双语形式
-     · 数组为空时，页面上整个「奖项荣誉」区块会自动隐藏
-     · TODO: 把下面两条换成你的真实奖项 */
+     · stage = 阶段（本科 / 高中），level = 级别（奖学金 / 校级 / 国家级 / 省级）
+     · 各字段都可写成 { zh: '...', en: '...' } 的双语形式；数组为空时区块自动隐藏 */
   awards: [
     {
+      year: '2026',
+      stage: { zh: '本科', en: 'Undergraduate' },
+      level: { zh: '奖学金', en: 'Scholarship' },
+      title: { zh: '华泰证券科技奖学金', en: 'Huatai Securities Science and Technology Scholarship' }
+    },
+    {
+      year: '2026',
+      stage: { zh: '本科', en: 'Undergraduate' },
+      level: { zh: '校级', en: 'School level' },
+      title: { zh: 'CUPT 北京大学校内赛 · 优胜奖', en: 'CUPT · Peking University campus round · Merit Award' }
+    },
+    {
       year: '2025',
-      level: { zh: '待填写 · 级别', en: 'To fill · Level' },
-      title: { zh: '奖项名称（待填写）', en: 'Award name (to be filled in)' },
-      desc: { zh: '一句话说明评选范围或获奖原因（待填写）。', en: 'One line about the award (to be filled in).' }
+      stage: { zh: '本科', en: 'Undergraduate' },
+      level: { zh: '国家级', en: 'National level' },
+      title: {
+        zh: '第十七届全国大学生数学竞赛 · 非数学 A 类二等奖',
+        en: '17th Chinese Mathematics Competitions · Second Prize (Non-Mathematics A)'
+      }
     },
     {
       year: '2024',
-      level: { zh: '待填写 · 奖学金', en: 'To fill · Scholarship' },
-      title: { zh: '奖学金 / 荣誉称号名称（待填写）', en: 'Scholarship / honour (to be filled in)' },
-      desc: { zh: '评选条件与范围（待填写）。', en: 'Criteria and scope (to be filled in).' }
+      stage: { zh: '高中', en: 'High school' },
+      level: { zh: '省级', en: 'Provincial level' },
+      title: {
+        zh: '第 41 届全国中学生物理竞赛 · 湖南赛区一等奖',
+        en: '41st Chinese Physics Olympiad · First Prize, Hunan Region'
+      }
+    },
+    {
+      year: '2023',
+      stage: { zh: '高中', en: 'High school' },
+      level: { zh: '省级', en: 'Provincial level' },
+      title: {
+        zh: '第 40 届全国中学生物理竞赛 · 湖南赛区一等奖',
+        en: '40th Chinese Physics Olympiad · First Prize, Hunan Region'
+      }
     }
   ],
 
   /* =============== 6. 竞赛经历 ===============
-     渲染成时间线；数组为空时整个区块会自动隐藏
-     TODO: 把下面两条换成你参加过的竞赛 */
+     渲染成时间线（按时间倒序）；数组为空时区块自动隐藏 */
   competitions: [
     {
-      period: '2024 – 2025',
-      name: { zh: '竞赛名称（待填写）', en: 'Competition name (to be filled in)' },
-      result: { zh: '奖项等级 / 名次', en: 'Award level / rank' },
-      desc: {
-        zh: '参赛内容、你负责的部分与收获（待填写）。',
-        en: 'What the contest was about and what you worked on (to be filled in).'
-      },
-      tags: { zh: ['学科', '赛区'], en: ['Subject', 'Region'] }
+      period: '2026.05',
+      name: { zh: 'CUPT 北京大学校内赛', en: 'CUPT · Peking University campus round' },
+      result: { zh: '优胜奖', en: 'Merit Award' },
+      tags: { zh: ['物理', '校内赛'], en: ['Physics', 'Campus round'] }
     },
     {
-      period: '2023 – 2024',
-      name: { zh: '竞赛名称（待填写）', en: 'Competition name (to be filled in)' },
-      result: { zh: '奖项等级 / 名次', en: 'Award level / rank' },
-      desc: {
-        zh: '参赛内容与角色（待填写）。',
-        en: 'What the contest was about and your role (to be filled in).'
-      },
-      tags: { zh: ['学科'], en: ['Subject'] }
+      period: '2025.10',
+      name: { zh: '第十七届全国大学生数学竞赛', en: '17th Chinese Mathematics Competitions' },
+      result: { zh: '非数学 A 类二等奖', en: 'Second Prize, Non-Mathematics A' },
+      tags: { zh: ['数学', '国家级'], en: ['Mathematics', 'National'] }
+    },
+    {
+      period: '2024.09',
+      name: { zh: '第 41 届全国中学生物理竞赛复赛', en: '41st Chinese Physics Olympiad (semi-final)' },
+      result: { zh: '湖南赛区一等奖', en: 'First Prize, Hunan Region' },
+      tags: { zh: ['物理', '赛区复赛'], en: ['Physics', 'Provincial semi-final'] }
+    },
+    {
+      period: '2023.09',
+      name: { zh: '第 40 届全国中学生物理竞赛复赛', en: '40th Chinese Physics Olympiad (semi-final)' },
+      result: { zh: '湖南赛区一等奖', en: 'First Prize, Hunan Region' },
+      tags: { zh: ['物理', '赛区复赛'], en: ['Physics', 'Provincial semi-final'] }
     }
   ],
 
