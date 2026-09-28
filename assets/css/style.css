@@ -914,3 +914,31 @@ a:hover { text-decoration: underline; }
   a { color: #000 !important; text-decoration: none; }
   @page { margin: 14mm; }
 }
+
+/* ---------- 27. 邮箱点击显示（联系方式卡片） ---------- */
+.contact-reveal { cursor: pointer; }
+.contact-reveal .contact-value {
+  color: var(--brand);
+  font-family: var(--font);
+  border-bottom: 1px dashed currentColor;
+}
+.contact-reveal:hover .contact-value { opacity: .8; }
+
+/* ---------- 28. 简历页：竞赛与奖项列表 ---------- */
+.resume-competitions { display: grid; gap: 1rem; }
+.resume-competitions li p { margin: .2rem 0 0; color: var(--text-muted); font-size: .92rem; }
+
+.resume-awards { display: grid; gap: .4rem; }
+.resume-awards li {
+  display: flex;
+  gap: .8rem;
+  align-items: baseline;
+  font-size: .92rem;
+}
+.resume-year {
+  flex: none;
+  min-width: 3.4rem;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  font-size: .78rem;
+}

@@ -139,6 +139,24 @@
   }
 
   /* ===============================================================
+     3.1 邮箱点击显示
+     联系方式卡片初始只显示提示文字，点击后才把「用户名 + 域名」
+     拼成完整邮箱，避免邮箱地址直接出现在页面源码里。
+     =============================================================== */
+  document.addEventListener('click', function (event) {
+    var card = event.target.closest ? event.target.closest('.contact-reveal') : null;
+    if (!card) return;
+
+    event.preventDefault();
+    var email = card.getAttribute('data-local') + '@' + card.getAttribute('data-domain');
+    var valueEl = card.querySelector('.contact-value');
+    if (valueEl) valueEl.textContent = email;
+
+    card.classList.remove('contact-reveal');
+    card.setAttribute('href', 'mailto:' + email);
+  });
+
+  /* ===============================================================
      4. 顶部导航阴影 + 阅读进度条 + 返回顶部
      =============================================================== */
   var header = byId('site-header');

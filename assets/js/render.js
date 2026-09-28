@@ -281,13 +281,65 @@ window.SiteRender = (function () {
   /* ---------- 10. 联系方式 ---------- */
   function renderContact(lang) {
     fill('contact-cards', (profile.contacts || []).map(function (c) {
-      var inner = '<span class="contact-icon" aria-hidden="true">' + icon(c.icon) + '</span>' +
-        '<span class="contact-label">' + esc(pick(c.label, lang)) + '</span>' +
-        '<span class="contact-value">' + esc(c.value || '') + '</span>';
+      var iconHtml = '<span class="contact-icon" aria-hidden="true">' + icon(c.icon) + '</span>';
+      var labelHtml = '<span class="contact-label">' + esc(pick(c.label, lang)) + '</span>';
 
+      /* 邮箱：源码里只存用户名与域名两部分，点击卡片后才拼成完整地址，
+         这样简单的爬虫抓不到完整邮箱 */
+      if (c.local && c.domain) {
+        return '<a class="card contact-card reveal contact-reveal" href="#"' +
+          ' data-local="' + esc(c.local) + '" data-domain="' + esc(c.domain) + '"' +
+          ' title="' + esc(t('revealEmail')) + '">' +
+          iconHtml + labelHtml +
+          '<span class="contact-value">' + esc(t('revealEmail')) + '</span>' +
+        '</a>';
+      }
+
+      var valueHtml = '<span class="contact-value">' + esc(c.value || '') + '</span>';
       return c.href
-        ? '<a class="card contact-card reveal" href="' + esc(c.href) + '"' + linkAttrs(c.href) + '>' + inner + '</a>'
-        : '<div class="card contact-card reveal">' + inner + '</div>';
+        ? '<a class="card contact-card reveal" href="' + esc(c.href) + '"' + linkAttrs(c.href) + '>' +
+            iconHtml + labelHtml + valueHtml + '</a>'
+        : '<div class="card contact-card reveal">' + iconHtml + labelHtml + valueHtml + '</div>';
+    }).join(''));
+  }
+
+  /* ---------- 11. 奖项荣誉 ---------- */
+  function renderAwards(lang) {
+    var items = DATA.awards || [];
+    var section = byId('awards');
+    if (section) section.hidden = items.length === 0;
+
+    fill('awards-cards', items.map(function (award) {
+      return '<article class="card reveal">' +
+        '<div class="project-top">' +
+          (award.level ? '<span class="project-badge">' + esc(pick(award.level, lang)) + '</span>' : '<span></span>') +
+          (award.year ? '<span class="project-year">' + esc(award.year) + '</span>' : '') +
+        '</div>' +
+        '<h3>' + esc(pick(award.title, lang)) + '</h3>' +
+        (pick(award.desc, lang) ? '<p>' + esc(pick(award.desc, lang)) + '</p>' : '') +
+      '</article>';
+    }).join(''));
+  }
+
+  /* ---------- 12. 竞赛经历（时间线） ---------- */
+  function renderCompetitions(lang) {
+    var items = DATA.competitions || [];
+    var section = byId('competitions');
+    if (section) section.hidden = items.length === 0;
+
+    fill('competitions-timeline', items.map(function (entry) {
+      var result = pick(entry.result, lang);
+      var desc = pick(entry.desc, lang);
+      return '<li class="timeline-item reveal">' +
+        '<span class="timeline-dot" aria-hidden="true"></span>' +
+        '<div class="timeline-body">' +
+          (entry.period ? '<p class="timeline-period">' + esc(entry.period) + '</p>' : '') +
+          '<h3 class="timeline-title">' + esc(pick(entry.name, lang)) +
+            (result ? ' · ' + esc(result) : '') + '</h3>' +
+          (desc ? '<p class="timeline-desc">' + esc(desc) + '</p>' : '') +
+          tags(entry.tags, lang) +
+        '</div>' +
+      '</li>';
     }).join(''));
   }
 
@@ -321,6 +373,12 @@ window.SiteRender = (function () {
         '</div>' +
         '<ul class="resume-contacts">' +
           (profile.contacts || []).map(function (c) {
+            /* 简历页为了便于打印，邮箱直接显示；首页的联系区块则是点击后才显示 */
+            if (c.local && c.domain) {
+              var mail = c.local + '@' + c.domain;
+              return '<li>' + icon(c.icon) +
+                '<a href="mailto:' + esc(mail) + '">' + esc(mail) + '</a></li>';
+            }
             var text = esc(c.value || '');
             return '<li>' + icon(c.icon) +
               (c.href ? '<a href="' + esc(c.href) + '">' + text + '</a>' : '<span>' + text + '</span>') + '</li>';
@@ -354,6 +412,34 @@ window.SiteRender = (function () {
         '</section>'
       : '';
 
+    var competitions = (DATA.competitions || []).length
+      ? '<section class="resume-block">' +
+          '<h2 class="resume-h2">' + esc((sections.competitions || {}).title || '') + '</h2>' +
+          '<ul class="resume-competitions">' + DATA.competitions.map(function (entry) {
+            var result = pick(entry.result, lang);
+            return '<li>' +
+              '<div class="resume-item-head">' +
+                '<strong>' + esc(pick(entry.name, lang)) + '</strong>' +
+                (entry.period ? '<span class="resume-period">' + esc(entry.period) + '</span>' : '') +
+              '</div>' +
+              (result ? '<p class="resume-tags">' + esc(result) + '</p>' : '') +
+              (pick(entry.desc, lang) ? '<p>' + esc(pick(entry.desc, lang)) + '</p>' : '') +
+            '</li>';
+          }).join('') + '</ul>' +
+        '</section>'
+      : '';
+
+    var awards = (DATA.awards || []).length
+      ? '<section class="resume-block">' +
+          '<h2 class="resume-h2">' + esc((sections.awards || {}).title || '') + '</h2>' +
+          '<ul class="resume-awards">' + DATA.awards.map(function (award) {
+            var level = pick(award.level, lang);
+            return '<li><span class="resume-year">' + esc(award.year || '') + '</span>' +
+              '<span>' + esc(pick(award.title, lang)) + (level ? ' · ' + esc(level) : '') + '</span></li>';
+          }).join('') + '</ul>' +
+        '</section>'
+      : '';
+
     var skills = '<section class="resume-block">' +
       '<h2 class="resume-h2">' + esc((sections.skills || {}).title || '') + '</h2>' +
       '<ul class="resume-skills">' + (DATA.skills || []).map(function (skill) {
@@ -376,7 +462,7 @@ window.SiteRender = (function () {
       }).join('') + '</ul>' +
     '</section>';
 
-    root.innerHTML = head + summary + education + work + skills + projects;
+    root.innerHTML = head + summary + education + competitions + work + awards + skills + projects;
   }
 
   /* ---------- 对外接口 ---------- */
@@ -387,6 +473,8 @@ window.SiteRender = (function () {
     renderHero(lang);
     renderAbout(lang);
     renderEducation(lang);
+    renderCompetitions(lang);
+    renderAwards(lang);
     renderSkills(lang);
     renderProjects(lang);
     renderGallery(lang);

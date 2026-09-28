@@ -18,9 +18,11 @@
 
 ## 功能特性
 
-- **完整个人信息页**：姓名与身份说明、个人简介、基本信息、教育经历时间线、技能、项目、作品集、文章与笔记、联系方式
+- **完整个人信息页**：姓名与身份说明、个人简介、基本信息、教育经历时间线、竞赛经历、奖项荣誉、技能、项目、联系方式
 - **中英文双语切换**：右上角「EN / 中」一键切换并记忆选择；也支持链接直接指定语言，如 `index.html?lang=en`
 - **独立简历页 `/resume.html`**：与首页共用数据，已写好打印样式，可直接打印或另存为 PDF
+- **邮箱点击显示**：`data.js` 里把邮箱拆成 `local` + `domain` 两段存放，页面源码中不会出现完整邮箱地址，访客点击卡片后才拼成 `mailto` 链接（简历页为便于打印直接显示）
+- **自动隐藏空区块**：`awards` / `competitions` 数组为空时，对应区块自动隐藏；`index.html` 中的「作品集」「文章」区块默认整段注释掉
 - **深色 / 浅色主题**：默认跟随系统，可手动切换并记忆（首屏内联脚本避免颜色闪烁）
 - **响应式设计**：桌面 / 平板 / 手机均可用，小屏自动折叠为汉堡菜单
 - **动效细节**：滚动进度条、区块进场动画、导航高亮、返回顶部按钮
@@ -38,20 +40,22 @@ npx serve .                    # 或者用 Node.js 启动
 所有文字都在 **`assets/js/data.js`** 里，中英文各写一份，形如 `{ zh: '中文', en: 'English' }`：
 
 ```js
-name: { zh: '张三', en: 'Zhang San' },
+name: { zh: '刘子凡', en: 'Zifan Liu' },
 ```
 
 | 想改的东西 | 在 `data.js` 里的位置 |
 | --- | --- |
-| 姓名、身份说明、Logo 字母 | `profile.name` / `profile.headline` / `profile.initial` |
+| 姓名、身份说明、Logo 字 | `profile.name` / `profile.headline` / `profile.initial` |
 | 个人简介、基本信息 | `profile.intro` / `profile.bio` / `profile.facts` |
-| 教育经历 | `profile.education`（数组，按时间倒序；`tags` 可放绩点、奖学金等） |
+| 教育经历 | `profile.education`（数组，按时间倒序） |
 | 实习 / 工作经历 | `profile.experience`（默认注释掉，取消注释即会出现） |
-| 联系方式（邮箱、微信、电话…） | `profile.contacts`（`icon` 支持 github / email / wechat / phone / site / bilibili / x / linkedin） |
+| 联系方式 | `profile.contacts`（邮箱写 `local` + `domain` 两段，见文件内注释） |
+| **竞赛经历** | `competitions`（时间线；数组为空则区块隐藏） |
+| **奖项荣誉** | `awards`（卡片；数组为空则区块隐藏） |
 | 技能 | `skills` |
 | 项目 | `projects` |
-| 作品集（可放截图） | `gallery`（填 `image: 'assets/img/xxx.png'` 即显示图片，留空则用渐变占位图） |
-| 文章与笔记 | `posts` |
+| 作品集（默认隐藏） | `gallery` + `index.html` 中被注释的区块 |
+| 文章与笔记（默认隐藏） | `posts` + `index.html` 中被注释的区块 |
 | 导航、区块标题、按钮等界面文字 | `ui.zh` / `ui.en` |
 | 主题色 | `assets/css/style.css` 顶部的 `--brand` / `--brand-2` |
 

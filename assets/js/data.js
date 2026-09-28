@@ -24,13 +24,13 @@ window.SITE_DATA = {
       resumeTitle: '简历 · 刘子凡',
       skip: '跳到主要内容',
       nav: [
-        { id: 'about',     label: '关于我' },
-        { id: 'education', label: '教育经历' },
-        { id: 'skills',    label: '技能' },
-        { id: 'projects',  label: '项目' },
-        { id: 'gallery',   label: '作品集' },
-        { id: 'posts',     label: '文章' },
-        { id: 'contact',   label: '联系我' }
+        { id: 'about',        label: '关于我' },
+        { id: 'education',    label: '教育经历' },
+        { id: 'competitions', label: '竞赛经历' },
+        { id: 'awards',       label: '奖项荣誉' },
+        { id: 'skills',       label: '技能' },
+        { id: 'projects',     label: '项目' },
+        { id: 'contact',      label: '联系我' }
       ],
       hero: {
         eyebrow: '你好，欢迎来到我的主页 👋',
@@ -38,13 +38,15 @@ window.SITE_DATA = {
         ctaResume: '我的简历'
       },
       sections: {
-        about:     { eyebrow: 'About',     title: '关于我' },
-        education: { eyebrow: 'Education', title: '教育经历', desc: '求学经历，以及在校期间的主要收获。' },
-        skills:    { eyebrow: 'Skills',    title: '技能',     desc: '日常接触较多的技术与工具，仍在持续扩充。' },
-        projects:  { eyebrow: 'Projects',  title: '项目',     desc: '一些作品与练习，更多内容都在 GitHub 上。' },
-        gallery:   { eyebrow: 'Gallery',   title: '作品集',   desc: '界面与数据可视化成果的展示。' },
-        posts:     { eyebrow: 'Posts',     title: '文章与笔记', desc: '记录踩过的坑与学到的东西。' },
-        contact:   { eyebrow: 'Contact',   title: '联系我',   desc: '任何想法、建议或合作邀约，都欢迎找我聊聊。' }
+        about:        { eyebrow: 'About',        title: '关于我' },
+        education:    { eyebrow: 'Education',    title: '教育经历', desc: '求学经历，以及在校期间的主要收获。' },
+        competitions: { eyebrow: 'Competitions', title: '竞赛经历', desc: '参加过的学科竞赛与科创比赛。' },
+        awards:       { eyebrow: 'Honors',       title: '奖项荣誉', desc: '获得过的奖学金与荣誉。' },
+        skills:       { eyebrow: 'Skills',       title: '技能',     desc: '日常接触较多的知识与工具，仍在持续扩充。' },
+        projects:     { eyebrow: 'Projects',     title: '项目',     desc: '一些作品与练习，更多内容都在 GitHub 上。' },
+        gallery:      { eyebrow: 'Gallery',      title: '作品集',   desc: '界面与数据可视化成果的展示。' },
+        posts:        { eyebrow: 'Posts',        title: '文章与笔记', desc: '记录踩过的坑与学到的东西。' },
+        contact:      { eyebrow: 'Contact',      title: '联系我',   desc: '任何想法、建议或合作邀约，都欢迎找我聊聊。' }
       },
       labels: {
         location: '所在地', languages: '语言', status: '目前', research: '研究方向',
@@ -52,23 +54,24 @@ window.SITE_DATA = {
         viewSource: '查看源码', readMore: '阅读全文', visit: '访问',
         resume: '查看简历', backHome: '回到首页', top: '回到顶部', source: '源码',
         hosted: '由 GitHub Pages 托管',
+        revealEmail: '点击显示邮箱',
         noJs: '你的浏览器禁用或未支持 JavaScript，部分内容可能无法显示。'
       }
     },
     en: {
       langButton: '中',
       htmlLang: 'en',
-      pageTitle: 'Liu Zifan · Personal Website',
-      resumeTitle: 'Resume · Liu Zifan',
+      pageTitle: 'Zifan Liu · Personal Website',
+      resumeTitle: 'Resume · Zifan Liu',
       skip: 'Skip to content',
       nav: [
-        { id: 'about',     label: 'About' },
-        { id: 'education', label: 'Education' },
-        { id: 'skills',    label: 'Skills' },
-        { id: 'projects',  label: 'Projects' },
-        { id: 'gallery',   label: 'Gallery' },
-        { id: 'posts',     label: 'Writing' },
-        { id: 'contact',   label: 'Contact' }
+        { id: 'about',        label: 'About' },
+        { id: 'education',    label: 'Education' },
+        { id: 'competitions', label: 'Competitions' },
+        { id: 'awards',       label: 'Honors' },
+        { id: 'skills',       label: 'Skills' },
+        { id: 'projects',     label: 'Projects' },
+        { id: 'contact',      label: 'Contact' }
       ],
       hero: {
         eyebrow: 'Hi, welcome to my homepage 👋',
@@ -76,13 +79,15 @@ window.SITE_DATA = {
         ctaResume: 'My resume'
       },
       sections: {
-        about:     { eyebrow: 'About',     title: 'About me' },
-        education: { eyebrow: 'Education', title: 'Education', desc: 'My academic background and what I gained from it.' },
-        skills:    { eyebrow: 'Skills',    title: 'Toolbox',  desc: 'Technologies and tools I work with, and still growing.' },
-        projects:  { eyebrow: 'Projects',  title: 'Projects', desc: 'Selected works and practices, more on GitHub.' },
-        gallery:   { eyebrow: 'Gallery',   title: 'Gallery',  desc: 'A look at interfaces and data visualisations I built.' },
-        posts:     { eyebrow: 'Posts',     title: 'Writing',  desc: 'Notes on problems solved and lessons learned.' },
-        contact:   { eyebrow: 'Contact',   title: 'Get in touch', desc: 'Ideas, feedback or collaboration — always welcome.' }
+        about:        { eyebrow: 'About',        title: 'About me' },
+        education:    { eyebrow: 'Education',    title: 'Education', desc: 'My academic background and what I gained from it.' },
+        competitions: { eyebrow: 'Competitions', title: 'Competitions', desc: 'Academic and science competitions I took part in.' },
+        awards:       { eyebrow: 'Honors',       title: 'Honors & awards', desc: 'Scholarships and honours I have received.' },
+        skills:       { eyebrow: 'Skills',       title: 'Toolbox',  desc: 'Knowledge and tools I work with, and still growing.' },
+        projects:     { eyebrow: 'Projects',     title: 'Projects', desc: 'Selected works and practices, more on GitHub.' },
+        gallery:      { eyebrow: 'Gallery',      title: 'Gallery',  desc: 'A look at interfaces and data visualisations I built.' },
+        posts:        { eyebrow: 'Posts',        title: 'Writing',  desc: 'Notes on problems solved and lessons learned.' },
+        contact:      { eyebrow: 'Contact',      title: 'Get in touch', desc: 'Ideas, feedback or collaboration — always welcome.' }
       },
       labels: {
         location: 'Location', languages: 'Languages', status: 'Status', research: 'Research',
@@ -90,6 +95,7 @@ window.SITE_DATA = {
         viewSource: 'View source', readMore: 'Read more', visit: 'Visit',
         resume: 'View resume', backHome: 'Back home', top: 'Back to top', source: 'Source',
         hosted: 'Hosted on GitHub Pages',
+        revealEmail: 'Click to show email',
         noJs: 'JavaScript is disabled, so some content may not be shown.'
       }
     }
@@ -98,7 +104,7 @@ window.SITE_DATA = {
   /* =============== 3. 个人信息（★ 主要修改区） =============== */
   profile: {
     /* 页面左上角 logo 与浏览器标题里的名字 */
-    name: { zh: '刘子凡', en: 'Liu Zifan' },
+    name: { zh: '刘子凡', en: 'Zifan Liu' },
     initial: '刘',                             // logo 方块里显示的字
 
     /* 一句话身份说明 */
@@ -121,7 +127,7 @@ window.SITE_DATA = {
         '这个网站用来记录我的学习与研究进展。如果你想交流物理、数值方法，或者只是想认识一下，都欢迎随时联系我。'
       ],
       en: [
-        'I am Liu Zifan, an undergraduate in the Electronic Information Science experimental class at Peking University. Physics is my main interest, and I like working through theory and numerics hand in hand.',
+        'I am Zifan Liu, an undergraduate in the Electronic Information Science experimental class at Peking University. Physics is my main interest, and I like working through theory and numerics hand in hand.',
         'I am currently studying CWT theory and numerical computation for photonic crystals: reading papers to understand the framework, and using MATLAB / Python for simulation and visualisation.',
         'This site keeps a record of my study and research. Feel free to get in touch if you would like to talk about physics, numerical methods, or anything else.'
       ]
@@ -135,20 +141,19 @@ window.SITE_DATA = {
       { labelKey: 'languages', value: { zh: '中文 · English', en: 'Chinese · English' } }
     ],
 
-    /* 联系方式：icon 支持 github / email / wechat / phone / site / bilibili / x / linkedin
-       不需要的条目整行删掉即可；例子（微信、电话）已注释，需要时取消注释并填入 */
+    /* 联系方式
+       · 邮箱拆成 local + domain 两段存放：页面源码里不会出现完整的邮箱地址，
+         访客点击卡片后才拼成 mailto 链接（逻辑在 render.js 与 main.js）
+       · 换邮箱只改 local 与 domain 即可；想加微信 / 电话，照着 github 那行加一条
+         （icon 支持 github / email / wechat / phone / site / bilibili / x / linkedin） */
     contacts: [
       { icon: 'github', label: { zh: 'GitHub', en: 'GitHub' }, value: '@blkl114', href: 'https://github.com/blkl114' },
-      { icon: 'email',  label: { zh: '邮箱（校内）', en: 'Email (PKU)' },
-        value: '2500012820@stu.pku.edu.cn', href: 'mailto:2500012820@stu.pku.edu.cn' },
-      { icon: 'email',  label: { zh: '邮箱（Gmail）', en: 'Email (Gmail)' },
-        value: 'lzfblkl@gmail.com', href: 'mailto:lzfblkl@gmail.com' },
-      { icon: 'email',  label: { zh: '邮箱（QQ）', en: 'Email (QQ)' },
-        value: '3908357857@qq.com', href: 'mailto:3908357857@qq.com' }
-      /* 需要显示微信 / 电话时，照着上面的格式加一行即可
-      ,{ icon: 'wechat', label: { zh: '微信', en: 'WeChat' }, value: 'your-wechat-id',   href: '' }
-      ,{ icon: 'phone',  label: { zh: '电话', en: 'Phone' },  value: '+86 138-0000-0000', href: 'tel:+8613800000000' }
-      */
+      { icon: 'email', label: { zh: '邮箱（校内）', en: 'Email (PKU)' },
+        local: '2500012820', domain: 'stu.pku.edu.cn' },
+      { icon: 'email', label: { zh: '邮箱（Gmail）', en: 'Email (Gmail)' },
+        local: 'lzfblkl', domain: 'gmail.com' },
+      { icon: 'email', label: { zh: '邮箱（QQ）', en: 'Email (QQ)' },
+        local: '3908357857', domain: 'qq.com' }
     ],
 
     /* 教育经历（按时间倒序） */
@@ -199,28 +204,82 @@ window.SITE_DATA = {
   /* =============== 4. 技能 =============== */
   skills: [
     {
-      title: { zh: '网页开发', en: 'Web development' },
+      title: { zh: '物理与数学基础', en: 'Physics & mathematics' },
       desc: {
-        zh: '语义化 HTML、现代 CSS 布局与原生 JavaScript，追求不依赖构建工具也能快速上线。',
-        en: 'Semantic HTML, modern CSS layouts and vanilla JavaScript — shipping fast without a build step.'
+        zh: '力学、电磁学、量子力学与数理方法，习惯从第一性原理出发把问题推一遍。',
+        en: 'Mechanics, electromagnetism, quantum mechanics and mathematical methods — I like deriving problems from first principles.'
       },
-      tags: { zh: ['HTML5', 'CSS3', 'JavaScript', '响应式设计'], en: ['HTML5', 'CSS3', 'JavaScript', 'Responsive'] }
+      tags: {
+        zh: ['力学', '电磁学', '量子力学', '数理方法'],
+        en: ['Mechanics', 'Electromagnetism', 'Quantum', 'Math methods']
+      }
     },
     {
-      title: { zh: '脚本与数据', en: 'Scripting & data' },
+      title: { zh: '数值计算与可视化', en: 'Numerical computation & visualisation' },
       desc: {
-        zh: '用 Python 处理数据、批量文件和自动化任务，也做一些数值计算与可视化。',
-        en: 'Automating data, files and repetitive tasks with Python, plus some numerical computing and visualisation.'
+        zh: '用 MATLAB / Python 求解微分方程、有限元与本征值问题，并用图像验证结果是否合理。',
+        en: 'Solving differential equations, finite-element and eigenvalue problems with MATLAB / Python, and checking the results visually.'
       },
-      tags: { zh: ['Python', 'NumPy', '数据处理', '可视化'], en: ['Python', 'NumPy', 'Data processing', 'Visualisation'] }
+      tags: {
+        zh: ['MATLAB', 'Python', '差分 / 有限元', '本征值问题'],
+        en: ['MATLAB', 'Python', 'FDM / FEM', 'Eigenvalue problems']
+      }
     },
     {
-      title: { zh: '工具与协作', en: 'Tools & workflow' },
+      title: { zh: '光子晶体 CWT（进行中）', en: 'Photonic crystals & CWT (ongoing)' },
       desc: {
-        zh: '版本管理、命令行与编辑器效率工具，让日常开发更顺手。',
-        en: 'Version control, the command line and editor tooling that make everyday development smoother.'
+        zh: '当前研究方向：光子晶体中 CWT 的理论框架与数值实现，正在读文献、逐步搭建计算流程。',
+        en: 'Current research direction: the CWT framework for photonic crystals and its numerical implementation — reading the literature and building the pipeline step by step.'
       },
-      tags: { zh: ['Git', 'GitHub', 'VS Code', 'PowerShell'], en: ['Git', 'GitHub', 'VS Code', 'PowerShell'] }
+      tags: {
+        zh: ['光子晶体', 'CWT', '理论推导', '编程实现'],
+        en: ['Photonic crystal', 'CWT', 'Theory', 'Coding']
+      }
+    }
+  ],
+
+  /* =============== 5. 奖项荣誉 ===============
+     · 四项字段都可能写成 { zh: '...', en: '...' } 的双语形式
+     · 数组为空时，页面上整个「奖项荣誉」区块会自动隐藏
+     · TODO: 把下面两条换成你的真实奖项 */
+  awards: [
+    {
+      year: '2025',
+      level: { zh: '待填写 · 级别', en: 'To fill · Level' },
+      title: { zh: '奖项名称（待填写）', en: 'Award name (to be filled in)' },
+      desc: { zh: '一句话说明评选范围或获奖原因（待填写）。', en: 'One line about the award (to be filled in).' }
+    },
+    {
+      year: '2024',
+      level: { zh: '待填写 · 奖学金', en: 'To fill · Scholarship' },
+      title: { zh: '奖学金 / 荣誉称号名称（待填写）', en: 'Scholarship / honour (to be filled in)' },
+      desc: { zh: '评选条件与范围（待填写）。', en: 'Criteria and scope (to be filled in).' }
+    }
+  ],
+
+  /* =============== 6. 竞赛经历 ===============
+     渲染成时间线；数组为空时整个区块会自动隐藏
+     TODO: 把下面两条换成你参加过的竞赛 */
+  competitions: [
+    {
+      period: '2024 – 2025',
+      name: { zh: '竞赛名称（待填写）', en: 'Competition name (to be filled in)' },
+      result: { zh: '奖项等级 / 名次', en: 'Award level / rank' },
+      desc: {
+        zh: '参赛内容、你负责的部分与收获（待填写）。',
+        en: 'What the contest was about and what you worked on (to be filled in).'
+      },
+      tags: { zh: ['学科', '赛区'], en: ['Subject', 'Region'] }
+    },
+    {
+      period: '2023 – 2024',
+      name: { zh: '竞赛名称（待填写）', en: 'Competition name (to be filled in)' },
+      result: { zh: '奖项等级 / 名次', en: 'Award level / rank' },
+      desc: {
+        zh: '参赛内容与角色（待填写）。',
+        en: 'What the contest was about and your role (to be filled in).'
+      },
+      tags: { zh: ['学科'], en: ['Subject'] }
     }
   ],
 
