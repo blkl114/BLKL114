@@ -9,7 +9,7 @@
 
 目前正在研究光子晶体 CWT 理论与数值计算：一边读文献梳理理论框架，一边用 MATLAB / Python 做数值模拟与可视化，希望把公式变成能跑、能看的图。
 
-个人主页：<https://blkl114.github.io>
+个人主页：<https://blkl114.github.io/BLKL114/>
 
 ## 教育经历
 
@@ -50,7 +50,7 @@
 - 邮箱（Gmail）：lzfblkl@gmail.com
 - 邮箱（QQ）：3908357857@qq.com
 
-更多信息见我的主页 <https://blkl114.github.io>（含 [在线简历](https://blkl114.github.io/resume.html)，支持中英文切换）。
+更多信息见我的主页 <https://blkl114.github.io/BLKL114/>（含 [在线简历](https://blkl114.github.io/BLKL114/resume.html)，支持中英文切换）。
 
 ---
 

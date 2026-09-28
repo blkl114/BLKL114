@@ -11,8 +11,9 @@ window.SITE_DATA = {
   /* =============== 1. 站点信息 =============== */
   site: {
     githubUser: 'blkl114',
-    repoUrl: 'https://github.com/blkl114/blkl114.github.io',
-    siteUrl: 'https://blkl114.github.io'
+    /* 仓库名为 BLKL114，站点以「项目页」形式发布在 /BLKL114/ 子路径下 */
+    repoUrl: 'https://github.com/blkl114/BLKL114',
+    siteUrl: 'https://blkl114.github.io/BLKL114'
   },
 
   /* =============== 2. 界面文案（导航 / 标题 / 按钮） =============== */
@@ -325,13 +326,13 @@ window.SITE_DATA = {
     {
       badge: 'Website',
       year: '2026',
-      title: { zh: 'blkl114.github.io 个人网站', en: 'blkl114.github.io — personal website' },
+      title: { zh: 'BLKL114 个人网站', en: 'BLKL114 — personal website' },
       desc: {
         zh: '本站：纯静态实现，中英双语、深浅色主题、响应式布局，托管于 GitHub Pages。',
         en: 'This site: fully static, bilingual, with dark mode and a responsive layout, hosted on GitHub Pages.'
       },
       tags: { zh: ['HTML', 'CSS', 'JavaScript'], en: ['HTML', 'CSS', 'JavaScript'] },
-      link: 'https://github.com/blkl114/blkl114.github.io'
+      link: 'https://github.com/blkl114/BLKL114'
     },
     /* 下面两个示例项目已按需隐藏；想恢复就把这段注释去掉 */
     /*
@@ -368,7 +369,7 @@ window.SITE_DATA = {
       title: { zh: '站点首页设计', en: 'Homepage design' },
       caption: { zh: '深色模式下的首屏与渐变背景。', en: 'Hero section with gradient background in dark mode.' },
       image: '',
-      href: 'https://github.com/blkl114/blkl114.github.io',
+      href: 'https://github.com/blkl114/BLKL114',
       tags: { zh: ['UI', 'CSS'], en: ['UI', 'CSS'] }
     },
     {
@@ -398,7 +399,7 @@ window.SITE_DATA = {
         en: 'From creating the repo and wiring up Pages to publishing automatically — a step-by-step note.'
       },
       tags: { zh: ['GitHub Pages', '教程'], en: ['GitHub Pages', 'Tutorial'] },
-      href: 'https://github.com/blkl114/blkl114.github.io'
+      href: 'https://github.com/blkl114/BLKL114'
     },
     {
       date: '2025-12-08',
