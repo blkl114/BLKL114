@@ -1,75 +1,66 @@
-# blkl114.github.io
+# 刘子凡 · Zifan Liu
 
-个人网站，使用纯 HTML / CSS / JavaScript 编写，无第三方依赖、无需构建工具，
-托管在 **GitHub Pages**：<https://blkl114.github.io>
+> 北京大学信息科学技术学院 · 电子信息科学类实验班 在读本科生
+> 物理学爱好者，目前正在研究**光子晶体 CWT 理论与数值计算**
 
-## 页面结构
+## 个人简介
 
-| 文件 | 说明 |
-| --- | --- |
-| `index.html` | 首页：Hero 首屏、关于我、教育经历、技能、项目、作品集、文章、联系 |
-| `resume.html` | 独立简历页，可一键「打印 / 保存为 PDF」 |
-| `404.html` | 自定义 404 页面 |
-| `assets/css/style.css` | 全站样式：CSS 变量、深浅色主题、时间线、卡片、简历与打印样式 |
-| `assets/js/data.js` | **所有个人信息与文案（中英双语）——改内容只需动这一个文件** |
-| `assets/js/render.js` | 把 `data.js` 渲染成页面结构（首页与简历页共用同一套数据） |
-| `assets/js/main.js` | 主题切换、语言切换、移动端菜单、滚动动效等交互 |
-| `.nojekyll` | 让 GitHub Pages 跳过 Jekyll，按纯静态文件服务 |
+我是刘子凡，北京大学电子信息科学类实验班在读本科生，主要兴趣在物理学，喜欢把理论推导和数值计算放在一起琢磨。
 
-## 功能特性
+目前正在研究光子晶体 CWT 理论与数值计算：一边读文献梳理理论框架，一边用 MATLAB / Python 做数值模拟与可视化，希望把公式变成能跑、能看的图。
 
-- **完整个人信息页**：姓名与身份说明、个人简介、基本信息、教育经历时间线、竞赛经历、奖项荣誉、技能、项目、联系方式
-- **中英文双语切换**：右上角「EN / 中」一键切换并记忆选择；也支持链接直接指定语言，如 `index.html?lang=en`
-- **独立简历页 `/resume.html`**：与首页共用数据，已写好打印样式，可直接打印或另存为 PDF
-- **邮箱点击显示**：`data.js` 里把邮箱拆成 `local` + `domain` 两段存放，页面源码中不会出现完整邮箱地址，访客点击卡片后才拼成 `mailto` 链接（简历页为便于打印直接显示）
-- **自动隐藏空区块**：`awards` / `competitions` 数组为空时，对应区块自动隐藏；`index.html` 中的「作品集」「文章」区块默认整段注释掉
-- **深色 / 浅色主题**：默认跟随系统，可手动切换并记忆（首屏内联脚本避免颜色闪烁）
-- **响应式设计**：桌面 / 平板 / 手机均可用，小屏自动折叠为汉堡菜单
-- **动效细节**：滚动进度条、区块进场动画、导航高亮、返回顶部按钮
-- **无障碍**：语义化标签、`skip-link`、`aria-*`、焦点样式，支持 `prefers-reduced-motion`
+本仓库也是我主页 <https://blkl114.github.io> 的源码，用来记录学习与研究进展。
 
-## 本地预览
+## 教育经历
 
-```powershell
-python -m http.server 8000     # 然后访问 http://localhost:8000
-npx serve .                    # 或者用 Node.js 启动
-```
+- **北京大学**（2025.09 – 至今）　信息科学技术学院 · 电子信息科学类实验班
+  - 学校官网：<https://www.pku.edu.cn/> ｜ 学院官网：<https://eecs.pku.edu.cn/>
+- **长郡中学**（2022.09 – 2025.06）　理科
+  - 学校官网：<http://www.changjun.com.cn/>
 
-## 如何修改内容（重要）
+## 奖项荣誉
 
-所有文字都在 **`assets/js/data.js`** 里，中英文各写一份，形如 `{ zh: '中文', en: 'English' }`：
+| 年份 | 阶段 | 级别 | 奖项 |
+| --- | --- | --- | --- |
+| 2026 | 本科 | 奖学金 | 华泰证券科技奖学金 |
+| 2026 | 本科 | 校级 | CUPT 北京大学校内赛 · 优胜奖 |
+| 2025 | 本科 | 国家级 | 第十七届全国大学生数学竞赛 · 非数学 A 类二等奖 |
+| 2024 | 高中 | 省级 | 第 41 届全国中学生物理竞赛 · 湖南赛区一等奖 |
+| 2023 | 高中 | 省级 | 第 40 届全国中学生物理竞赛 · 湖南赛区一等奖 |
 
-```js
-name: { zh: '刘子凡', en: 'Zifan Liu' },
-```
+## 竞赛经历
 
-| 想改的东西 | 在 `data.js` 里的位置 |
-| --- | --- |
-| 姓名、身份说明、Logo 字 | `profile.name` / `profile.headline` / `profile.initial` |
-| 个人简介、基本信息 | `profile.intro` / `profile.bio` / `profile.facts` |
-| 教育经历 | `profile.education`（数组，按时间倒序） |
-| 实习 / 工作经历 | `profile.experience`（默认注释掉，取消注释即会出现） |
-| 联系方式 | `profile.contacts`（邮箱写 `local` + `domain` 两段，见文件内注释） |
-| **竞赛经历** | `competitions`（时间线；数组为空则区块隐藏） |
-| **奖项荣誉** | `awards`（卡片；数组为空则区块隐藏） |
-| 技能 | `skills` |
-| 项目 | `projects` |
-| 作品集（默认隐藏） | `gallery` + `index.html` 中被注释的区块 |
-| 文章与笔记（默认隐藏） | `posts` + `index.html` 中被注释的区块 |
-| 导航、区块标题、按钮等界面文字 | `ui.zh` / `ui.en` |
-| 主题色 | `assets/css/style.css` 顶部的 `--brand` / `--brand-2` |
+| 时间 | 竞赛 | 结果 |
+| --- | --- | --- |
+| 2026.05 | CUPT 北京大学校内赛 | 优胜奖 |
+| 2025.10 | 第十七届全国大学生数学竞赛 | 非数学 A 类二等奖 |
+| 2024.09 | 第 41 届全国中学生物理竞赛复赛 | 湖南赛区一等奖 |
+| 2023.09 | 第 40 届全国中学生物理竞赛复赛 | 湖南赛区一等奖 |
 
-## 部署
+## 技能
 
-推送到 `main` 分支即会自动发布（GitHub Pages 会在一两分钟内重新构建）：
+- **物理与数学基础**：力学、电磁学、量子力学、数理方法
+- **数值计算与可视化**：MATLAB、Python、差分 / 有限元、本征值问题
+- **光子晶体 CWT（进行中）**：理论框架与数值实现
+
+## 联系方式
+
+- GitHub：[@blkl114](https://github.com/blkl114)
+- 邮箱（校内）：2500012820@stu.pku.edu.cn
+- 邮箱（Gmail）：lzfblkl@gmail.com
+- 邮箱（QQ）：3908357857@qq.com
+
+更多信息见我的主页 <https://blkl114.github.io>（含 [在线简历](https://blkl114.github.io/resume.html)，支持中英文切换）。
+
+## 关于本仓库
+
+本仓库是上述主页的源码，使用纯 HTML / CSS / JavaScript 编写，由 GitHub Pages 部署。
+页面上的所有文字内容都集中存放在 `assets/js/data.js` 一个文件里（中英双语），改内容只需修改这一个文件。
 
 ```powershell
-git add .
-git commit -m "update site"
-git push
+python -m http.server 8000     # 本地预览：http://localhost:8000
 ```
 
-## License
+---
 
-个人站点，页面内容版权归作者所有；代码部分可自由参考。
-
+© 刘子凡 · Hosted on GitHub Pages
