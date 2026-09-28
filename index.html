@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>blkl114 · 个人网站</title>
+  <meta name="description" content="blkl114 的个人网站：关于我、技能、项目与联系方式。" />
+  <meta name="theme-color" content="#2563eb" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%232563eb'/%3E%3Ctext x='50' y='70' font-size='56' font-family='sans-serif' font-weight='700' fill='white' text-anchor='middle'%3Eb%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script>
+    /* 首屏渲染前确定主题，避免颜色闪烁 */
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <!-- ================= 顶部导航 ================= -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">b</span>
+        <span class="brand-text">blkl114</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="主导航">
+        <ul class="nav-list">
+          <li><a href="#about">关于我</a></li>
+          <li><a href="#skills">技能</a></li>
+          <li><a href="#projects">项目</a></li>
+          <li><a href="#contact">联系</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="切换深色 / 浅色主题" title="切换主题">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="nav">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </div>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main id="main">
+    <!-- ================= Hero ================= -->
+    <section class="hero" id="top">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2"></span>
+        <span class="grid-lines"></span>
+      </div>
+      <div class="container hero-inner">
+        <p class="hero-eyebrow reveal">你好，欢迎来到我的主页 👋</p>
+        <h1 class="hero-title reveal">
+          我是 <span class="gradient-text">blkl114</span>
+        </h1>
+        <p class="hero-subtitle reveal">
+          一名热爱动手实践的开发者 —— 喜欢把想法变成能跑起来的代码，
+          从脚本工具到网页应用，持续折腾、持续记录。
+        </p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="#projects">看看我的项目</a>
+          <a class="btn btn-ghost" href="https://github.com/blkl114" target="_blank" rel="noopener">GitHub 主页</a>
+        </div>
+        <dl class="hero-stats reveal">
+          <div class="stat"><dt>关注方向</dt><dd>Web / 数据处理</dd></div>
+          <div class="stat"><dt>常用工具</dt><dd>Git · VS Code · Python</dd></div>
+          <div class="stat"><dt>当前状态</dt><dd>持续学习中</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ================= 关于我 ================= -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-eyebrow">About</p>
+          <h2 class="section-title">关于我</h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              这里是我在 GitHub Pages 上的个人空间。我平时喜欢研究各种技术细节，
+              把重复的活儿交给脚本，把有意思的想法做成小项目，也会顺手把踩过的坑记下来。
+            </p>
+            <p>
+              目前主要折腾网页前端、Python 工具脚本，以及一些工程计算与可视化的内容。
+              如果你对下面列出的项目感兴趣，或者想一起做点什么，欢迎随时联系我。
+            </p>
+            <!-- TODO: 把上面两段换成你自己的真实介绍（教育 / 工作 / 兴趣） -->
+            <ul class="about-facts">
+              <li><strong>所在地</strong><span>中国</span></li>
+              <li><strong>语言</strong><span>中文 · English</span></li>
+              <li><strong>目前</strong><span>开放合作与交流</span></li>
+            </ul>
+          </div>
+
+          <aside class="about-card reveal">
+            <div class="avatar" aria-hidden="true">b</div>
+            <h3 class="about-card-title">blkl114</h3>
+            <p class="about-card-sub">Developer · Lifelong Learner</p>
+            <ul class="about-links">
+              <li><a href="https://github.com/blkl114" target="_blank" rel="noopener">GitHub</a></li>
+              <li><a href="#contact">联系我</a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 技能 ================= -->
+    <section class="section section-alt" id="skills">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-eyebrow">Skills</p>
+          <h2 class="section-title">我在用什么</h2>
+          <p class="section-desc">下面是我日常接触较多的技术与工具，仍在持续扩充。</p>
+        </header>
+
+        <div class="cards">
+          <article class="card reveal">
+            <h3>网页开发</h3>
+            <p>语义化 HTML、现代 CSS 布局与原生 JavaScript，追求不依赖构建工具也能快速上线。</p>
+            <ul class="tags">
+              <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>响应式设计</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3>脚本与数据</h3>
+            <p>用 Python 处理数据、批量文件和自动化任务，也做一些数值计算与可视化。</p>
+            <ul class="tags">
+              <li>Python</li><li>NumPy</li><li>数据处理</li><li>可视化</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3>工具与协作</h3>
+            <p>版本管理、命令行与编辑器效率工具，让日常开发更顺手。</p>
+            <ul class="tags">
+              <li>Git</li><li>GitHub</li><li>VS Code</li><li>PowerShell</li>
+            </ul>
+          </article>
+        </div>
+        <!-- TODO: 把上面三张卡片的标题、描述与标签换成你真实的技术栈 -->
+      </div>
+    </section>
+
+    <!-- ================= 项目 ================= -->
+    <section class="section" id="projects">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-eyebrow">Projects</p>
+          <h2 class="section-title">项目</h2>
+          <p class="section-desc">一些作品与练习，更多内容都在 GitHub 上。</p>
+        </header>
+
+        <div class="cards">
+          <article class="card project-card reveal">
+            <div class="project-top">
+              <span class="project-badge">Website</span>
+              <span class="project-year">2026</span>
+            </div>
+            <h3>blkl114.github.io</h3>
+            <p>你正在浏览的这个个人网站：纯静态实现，自带深色模式与响应式布局，托管于 GitHub Pages。</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <div class="project-links">
+              <a href="https://github.com/blkl114/blkl114.github.io" target="_blank" rel="noopener">查看源码 →</a>
+            </div>
+          </article>
+
+          <article class="card project-card reveal">
+            <div class="project-top">
+              <span class="project-badge">Tool</span>
+              <span class="project-year">2025</span>
+            </div>
+            <h3>项目示例一</h3>
+            <p>这里放一个你实际做过的项目：一句话说明它解决什么问题、你负责了哪些部分。</p>
+            <ul class="tags"><li>Python</li><li>自动化</li></ul>
+            <div class="project-links">
+              <a href="https://github.com/blkl114" target="_blank" rel="noopener">查看源码 →</a>
+            </div>
+          </article>
+
+          <article class="card project-card reveal">
+            <div class="project-top">
+              <span class="project-badge">Demo</span>
+              <span class="project-year">2025</span>
+            </div>
+            <h3>项目示例二</h3>
+            <p>再放一个项目卡片，写清「做了什么 + 用了什么技术 + 效果如何」。</p>
+            <ul class="tags"><li>JavaScript</li><li>可视化</li></ul>
+            <div class="project-links">
+              <a href="https://github.com/blkl114" target="_blank" rel="noopener">查看源码 →</a>
+            </div>
+          </article>
+        </div>
+        <!-- TODO: 复制一张 project-card，换成你自己的项目；不需要的示例卡片直接删掉 -->
+      </div>
+    </section>
+
+    <!-- ================= 联系 ================= -->
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-eyebrow">Contact</p>
+          <h2 class="section-title">联系我</h2>
+          <p class="section-desc">任何想法、建议或合作邀约，都欢迎找我聊聊。</p>
+        </header>
+
+        <div class="cards cards-center">
+          <a class="card contact-card reveal" href="https://github.com/blkl114" target="_blank" rel="noopener">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" class="icon"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+            </span>
+            <h3>GitHub</h3>
+            <p>@blkl114</p>
+          </a>
+        </div>
+        <!-- 想显示邮箱时：取消下面注释，并把 mailto 换成你的邮箱
+        <a class="card contact-card reveal" href="mailto:你的邮箱@example.com">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="icon"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+          </span>
+          <h3>Email</h3>
+          <p>你的邮箱@example.com</p>
+        </a>
+        -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= 页脚 ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> blkl114 · 由 GitHub Pages 托管</p>
+      <p class="footer-links">
+        <a href="https://github.com/blkl114/blkl114.github.io" target="_blank" rel="noopener">源码</a>
+        <a href="#top">回到顶部</a>
+      </p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="to-top" type="button" aria-label="返回顶部" title="返回顶部">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
